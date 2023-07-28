@@ -29,7 +29,7 @@ public class Ex06 {
 			 case  2:
 				 System.out.println( "일정을 조회합니다. ");
 				 for( int i=0; i< index; i++) {
-					 System.out.println( days[i]);
+					 System.out.println( (i+1) +"." + days[i]);
 				 }				  
 				 break;
 			 case  3:
@@ -50,15 +50,18 @@ public class Ex06 {
 				 days[updateIndex-1] =  updateDay;		
 				 // 1  공부하기				 
 				 break;
-			 case 4:
-				 System.out.println(" 삭제");
+			 case 4:				 
+				 System.out.println(" 삭제");				 
+				 System.out.println( "일정을 조회합니다. ");
 				 for( int i=0; i< index; i++) {
 					 System.out.println( (i+1) +"." + days[i]);
-				 }	
+					 //  1. 놀러가기
+					 //  2. 산책하기
+				 }					 
 				 System.out.println("삭제하고 싶은 일정을 선택하세요");
-				 String deleteIndex_ = sc.nextLine();//"2"=>2
-				 int deleteIndex = Integer.parseInt(deleteIndex_);
-				 days[deleteIndex-1]="";
+				 String deleteIndex_ = sc.nextLine();  // "2" => 2
+				 int  deleteIndex  =  Integer.parseInt(deleteIndex_);
+				 days[deleteIndex-1]=""; 
 				 break;
 			 case 5:
 				 System.out.println(" 종료");

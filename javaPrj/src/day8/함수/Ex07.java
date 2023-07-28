@@ -43,7 +43,6 @@ public class Ex07 {
 				 
 				 System.out.println("변경할 순번과 내용을 입력하세요");			 
 				 int updateIndex =  sc.nextInt(); 
-				 
 				 String updateDay = sc.nextLine();				 
 				 days[updateIndex-1] =  updateDay;		
 				 // 1  공부하기				 
