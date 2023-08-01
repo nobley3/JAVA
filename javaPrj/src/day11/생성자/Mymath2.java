@@ -1,0 +1,13 @@
+package day11.생성자;
+
+public class Mymath2 {
+//	멤버변수를 만들지 않고 기능을 만들겠다 => static
+//	static 매서드방법 => new필요없음 클래스명.매서드명()
+	public static int add(int su1,int su2) {
+		return su1+su2;
+	}
+	public static double add(double su1,double su2) {
+		return su1+su2;
+	}
+	
+}
