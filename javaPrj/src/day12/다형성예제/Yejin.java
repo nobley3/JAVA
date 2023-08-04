@@ -1,6 +1,6 @@
 package day12.다형성예제;
 
-public class Yejin extends Person {
+public class Yejin extends Person{
 	
 	@Override
 	public void dance(){
