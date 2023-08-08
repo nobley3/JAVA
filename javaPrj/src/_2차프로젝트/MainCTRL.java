@@ -10,6 +10,10 @@ public class MainCTRL {
 		Customer_Mng cm = new Customer_Mng();
 		cm.init(mm);
 		
+		Admin adm = new Admin();
+	
+		
+		
 		Scanner sc = new Scanner(System.in);
 		while(true) {
 			System.out.println("1. 고객");
@@ -23,17 +27,18 @@ public class MainCTRL {
 					System.out.println("3. 상품 조회");
 					System.out.println("4. 장바구니");
 					System.out.println("5. 구매");
-					System.out.println("6. 뒤로가기");
+					System.out.println("6. 구매 내역");
+					System.out.println("0. 뒤로가기");
 					int cnum = sc.nextInt();
 					switch(cnum) {
 					case 1: 
-						System.out.println("로그인");
+						cm.login();
 						break;
 					case 2:
 						cm.inputData(mm); 
 						break;
 					case 3:
-						System.out.println("상품조회");
+						adm.printProduct();
 						break;
 					case 4:
 						System.out.println("장바구니");
@@ -42,32 +47,36 @@ public class MainCTRL {
 						System.out.println("구매");
 						break;
 					case 6:
+						System.out.println("구매 내역");
+						break;
+					case 0:
 						break loop;
+					default:
+						System.out.println("잘못된 입력입니다. ");
 					}
+			
 				}
 			case 2:
 				while(true){
 					System.out.println("1. 고객 조회");
-					System.out.println("2. 등급 정보 조회");
-					System.out.println("3. 상품 조회");
-					System.out.println("4. 상품 수정");
-					System.out.println("5. 뒤로가기");
+					System.out.println("2. 등급별 고객 조회");
+					System.out.println("3. 상품 조회 및 관리");
+					System.out.println("0. 뒤로가기");
 					int cnum = sc.nextInt();
 					switch(cnum) {
 					case 1: 
 						cm.printData();
 						break;
 					case 2:
-						mm.printData(); // 정렬로 다시 수정하삼
+						cm.showMember(mm);
 						break;
 					case 3:
-						System.out.println("상품 조회");
+						adm.admin_menu();
 						break;
-					case 4:
-						System.out.println("상품 수정");
-						break;
-					case 5:
+					case 0:
 						break loop;
+					default:
+						System.out.println("잘못된 입력입니다. ");
 					}
 				}
 			}
