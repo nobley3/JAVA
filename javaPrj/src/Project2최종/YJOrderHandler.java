@@ -1,13 +1,13 @@
-package Project2;
+package Project2최종;
 
 import java.util.ArrayList;
 
-public class OrderHandler {
+public class YJOrderHandler {
 
-	ArrayList <Order> Olist = new ArrayList<>(); 
+	ArrayList <YJOrder> Olist = new ArrayList<>(); 
 
 	//주문정보 등록
-	public void addOrderItem(Order order ) {
+	public void addOrderItem(YJOrder order ) {
 		
 	 	Olist.add(order);
 	}
@@ -15,7 +15,7 @@ public class OrderHandler {
 //	주문정보 조회
 	public void showOrders() {
 		
-		for(Order o : Olist) {
+		for(YJOrder o : Olist) {
 			System.out.println(o);
 		}
 	}
@@ -35,7 +35,7 @@ public class OrderHandler {
 		
 		
 		for( int i=0; i< Olist.size() ; i++) {			
-			Order o  =Olist.get(i);
+			YJOrder o  =Olist.get(i);
 			if( o.getGoods().getNum()== num) {
 				Olist.remove(o);
 			}

@@ -2,7 +2,7 @@ package Project2;
 
 import java.util.Scanner;
 
-public class Test2 {
+public class Test3 {
 
 	public static void main(String[] args) {
 
@@ -37,50 +37,47 @@ public class Test2 {
 			case 2:
 
 				int number;
-				int count;
+				int cnt;
 				System.out.println("구매하실 상품번호와 수량을 입력하세요");
 				Scanner sc2 = new Scanner(System.in);
 				number = sc2.nextInt();
-				count = sc2.nextInt();
+				cnt = sc2.nextInt();
 
 				Goods goods = c2.searchItem(number);
 				System.out.println(goods);
 
-				Order order = new Order(count, goods);
+				Order order = new Order(cnt, goods);
 				oh.addOrderItem(order);
 				break;
 
 			case 3:
 
 				oh.showOrders();
-				System.out.println("변경하실 상품번호를 입력하세요:");
+				System.out.println("변경하실 상품번호를 입력하세요.");
 				int changeNumber = sc.nextInt();
-
-				if (changeNumber >= 1 && changeNumber <= oh.Olist.size()) {
-					Order selectedOrder = oh.Olist.get(changeNumber - 1);
-					System.out.println("현재 " + selectedOrder.getGoods().getName() + "의 수량: " + selectedOrder.getCount());
-					System.out.println("새로운 수량을 입력하세요:");
-
-					int newStock = sc.nextInt();
-					selectedOrder.setCount(newStock);
-					System.out.println(selectedOrder.getGoods().getName() + "의 수량이 " + newStock + "로 변경되었습니다.");
-				} else {
-					System.out.println("없는 번호입니다.");
+				Goods changegoods = c2.searchItem(changeNumber);
+				System.out.println(" 주문수량 변경하실 상품은" + changegoods.getName() + "입니다.");
+				System.out.println(" 변경할 수량을 입력하세요");
+				int newStock = sc.nextInt();
+				for (Order o : oh.Olist) {
+					if (o.getGoods().getNum() == changeNumber) {
+						o.setCount(newStock);
+					}
 				}
 				break;
+				
 			case 4:
 				oh.showOrders();
 				System.out.println("삭제하실 상품번호를 입력하세요");
 				Scanner sc3 = new Scanner(System.in);
 				number = sc3.nextInt();
-				Goods deletegoods=c2.searchItem(number);
-				System.out.println("삭제하실 상품은 "+deletegoods+"입니다.");
+				Goods deletegoods = c2.searchItem(number);
+				System.out.println("삭제하실 상품은 " + deletegoods + "입니다.");
 				oh.removeOrders(number);
 				break;
 
 			case 5:
 				oh.showOrders();
-
 				break;
 
 			case 6:
